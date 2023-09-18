@@ -1,3 +1,35 @@
+# Keshet-WeatherCast
+
+I left the appKey on purpose, for your own use. (for you to avoid registering to this API)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # WeatherCastApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.2.
