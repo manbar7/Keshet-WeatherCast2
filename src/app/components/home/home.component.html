@@ -1,0 +1,65 @@
+<div class="header" >
+    <mat-toolbar style="background: yellow;">
+
+        <span>Weather Forecast App</span>
+        <span class="example-spacer"></span>
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+          <!-- <mat-icon>favorite</mat-icon> -->
+        </button>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+          <!-- <mat-icon>share</mat-icon> -->
+        </button>
+    </mat-toolbar>
+</div>
+
+
+
+<div class="main">
+
+   <div class="search-box">
+    <mat-form-field appearance="fill">
+        <mat-label style="color: black;">Free Text City Search</mat-label>
+        <input matInput  id="searchValue"  [(ngModel)]="searchValue" />
+      </mat-form-field>
+    
+  </div>
+
+  <button class="button" style="background: yellow;" mat-raised-button (click)="search()">Search City</button>
+  <button class="button" style="background: yellow;" mat-raised-button (click)="clearSearch()">Clear Search</button>
+
+<div class="results-box" *ngIf="resultData" >
+  <mat-form-field appearance="fill" style="width: 400px;">
+    <mat-label>Choose from results:</mat-label>
+      <mat-select style="width: 400px;">
+        <mat-option *ngFor="let item of resultData" [value]="item.name" style="width: 400px;" (click)="getCityData(item)">
+      {{item.name}}, {{item.adm_area1}} , {{item.country}}
+        </mat-option>
+    </mat-select>
+ </mat-form-field>
+</div>
+
+
+<div class="cards-main" *ngIf="forecastItems" >
+    <div  *ngFor="let item of forecastItems">
+     <mat-card class="card">
+      
+      <mat-card-title style="font-size: 11px;" >{{item.day}}</mat-card-title>
+      <img class="image"  src="../../../../assets/icons/weather_icons/set03/small/{{item.icon}}.png" >
+      <mat-card-content style="font-size: 11px; margin-top: 20px;">{{item.summary}}</mat-card-content>
+     </mat-card><br/>
+   </div>
+
+ </div>
+
+</div>
+
+
+
+
+
+
+
+<div class="footer" > 
+    <mat-toolbar style="background: yellow;">all rights reserved to itay manber @2023</mat-toolbar>
+</div>
+   
